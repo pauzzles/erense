@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Question</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YOOOOOOOOOOOO!!!</h1>
+
+        <div class="question-section">
+            <div class="question">Do you wanna watch Attack on Titan today?</div>
+            <div class="options">
+                <button onclick="handleOption('no')">no</button>
+                <button onclick="handleOption('idk')">idk</button>
+                <button onclick="handleOption('maybe')">maybe</button>
+                <button onclick="handleOption('yes daddy')">yes daddy</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
+
+    <div id="floating-heart" class="floating-heart">❤️</div>
+
+    <script>
+        function handleOption(option) {
+            const feedback = document.getElementById('feedback');
+            const heart = document.getElementById('floating-heart');
+            if (option === 'yes daddy') {
+                feedback.innerHTML = `<p>Correct! 🎉</p><a href="https://rave.watch/j6ukT" target="_blank">Watch Attack on Titan</a>`;
+                feedback.style.color = 'green';
+                feedback.classList.add('fadeIn');
+                heart.style.display = 'block';  // Show the floating heart
+                setTimeout(() => {
+                    heart.style.display = 'none';  // Hide the heart after animation
+                }, 5000);  // Duration of the floating animation
+            } else {
+                feedback.innerHTML = '<p>Wrong answer! 😡</p>';
+                feedback.style.color = 'red';
+                feedback.classList.add('fadeIn');
+            }
+        }
+    </script>
+</body>
+</html>
